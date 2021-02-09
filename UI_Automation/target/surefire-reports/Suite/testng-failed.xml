@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
+  <test name="Test">
+    <classes>
+      <class name="com.testclasses.HomePageTesting"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)">
+    <classes>
+      <class name="com.testclasses.HomePageTesting">
+        <methods>
+          <include name="setReport"/>
+          <include name="tearDown"/>
+          <include name="endReport"/>
+          <include name="generalVerificationHomePage"/>
+          <include name="closeExtent"/>
+          <include name="init"/>
+          <include name="FinishTesting"/>
+        </methods>
+      </class> <!-- com.testclasses.HomePageTesting -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
