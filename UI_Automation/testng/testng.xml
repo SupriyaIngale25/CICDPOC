@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Suite">
-  <test name="Test">
-    <classes>
-      <class name="com.testclasses.HomePageTesting"/>
-    </classes>
-  </test> <!-- Test -->
+
+  	<!-- <test name="HomePage test">
+		<classes>
+			<class name="com.testclasses.HomePageTesting" />
+		</classes>
+	</test> -->
+
+	<test name="Header test">
+		<classes>
+			<class
+				name="com.testclasses.FAD_Page_Testing" />
+		</classes>
+	</test> 
+  
 </suite> <!-- Suite -->

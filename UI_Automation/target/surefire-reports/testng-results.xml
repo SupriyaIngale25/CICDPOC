@@ -1,51 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="2" passed="1">
+<testng-results skipped="2" failed="1" total="3" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="73555" started-at="2021-02-09T11:53:02Z" finished-at="2021-02-09T11:54:16Z">
+  <suite name="Suite" duration-ms="50762" started-at="2021-04-06T11:54:50Z" finished-at="2021-04-06T11:55:41Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="73555" started-at="2021-02-09T11:53:02Z" finished-at="2021-02-09T11:54:16Z">
-      <class name="com.testclasses.HomePageTesting">
-        <test-method status="PASS" signature="setReport()[pri:0, instance:com.testclasses.HomePageTesting@36d4b5c]" name="setReport" is-config="true" duration-ms="143" started-at="2021-02-09T17:23:02Z" finished-at="2021-02-09T17:23:02Z">
+    <test name="Header test" duration-ms="50762" started-at="2021-04-06T11:54:50Z" finished-at="2021-04-06T11:55:41Z">
+      <class name="com.testclasses.FAD_Page_Testing">
+        <test-method status="PASS" signature="setReport()[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d]" name="setReport" is-config="true" duration-ms="145" started-at="2021-04-06T17:24:50Z" finished-at="2021-04-06T17:24:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setReport -->
-        <test-method status="PASS" signature="init()[pri:0, instance:com.testclasses.HomePageTesting@36d4b5c]" name="init" is-config="true" duration-ms="8530" started-at="2021-02-09T17:23:02Z" finished-at="2021-02-09T17:23:11Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d]" name="init" is-config="true" duration-ms="26569" started-at="2021-04-06T17:24:50Z" finished-at="2021-04-06T17:25:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="HomePageLoadTest()[pri:1, instance:com.testclasses.HomePageTesting@36d4b5c]" name="HomePageLoadTest" duration-ms="39137" started-at="2021-02-09T17:23:11Z" finished-at="2021-02-09T17:23:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- HomePageLoadTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.testclasses.HomePageTesting@36d4b5c]" name="tearDown" is-config="true" duration-ms="3" started-at="2021-02-09T17:23:50Z" finished-at="2021-02-09T17:23:50Z">
+        <test-method status="FAIL" signature="VerifyVIPProfiles(java.lang.String)[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d]" name="VerifyVIPProfiles" duration-ms="12087" started-at="2021-04-06T17:25:17Z" data-provider="data-provider" finished-at="2021-04-06T17:25:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=HomePageLoadTest status=SUCCESS method=HomePageTesting.HomePageLoadTest()[pri:1, instance:com.testclasses.HomePageTesting@36d4b5c] output={null}]]]>
+                <![CDATA[https://www.mountsinai.org/]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="generalVerificationHomePage()[pri:2, instance:com.testclasses.HomePageTesting@36d4b5c]" name="generalVerificationHomePage" duration-ms="21771" started-at="2021-02-09T17:23:50Z" finished-at="2021-02-09T17:24:12Z">
-          <exception class="org.openqa.selenium.TimeoutException">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[Expected condition failed: waiting for com.utils.CommonUtils$2@2b52c0d6 (tried for 20 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[chrome not reachable
+  (Session info: chrome=86.0.4240.75)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'GOL012019', ip: '10.200.60.205', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56689}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ee71449514010434767dc8808e74abd8]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.utils.CommonUtils$2@2b52c0d6 (tried for 20 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.utils.CommonUtils.click(CommonUtils.java:214)
-	at com.pageobjects.HomePage.verifylogoRedirectionlink(HomePage.java:42)
-	at com.testclasses.HomePageTesting.generalVerificationHomePage(HomePageTesting.java:33)
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=86.0.4240.75)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'GOL012019', ip: '10.200.60.205', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56689}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ee71449514010434767dc8808e74abd8
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:276)
+	at com.utils.CommonUtils.navigateToURL(CommonUtils.java:176)
+	at com.pageobjects.HomePage.navigateToUrl(HomePage.java:26)
+	at com.testclasses.FAD_Page_Testing.VerifyVIPProfiles(FAD_Page_Testing.java:18)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
@@ -70,65 +83,131 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-Caused by: org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <img src="/mshealth/themes/default/media/images/logo-color.png" alt="Mount Sinai" width="130" height="44"> is not clickable at point (168, 274). Other element would receive the click: <form action="/find-a-doctor/result" method="get" style="width: 100%;">...</form>
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyVIPProfiles -->
+        <test-method status="FAIL" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d]" name="tearDown" is-config="true" duration-ms="0" started-at="2021-04-06T17:25:29Z" finished-at="2021-04-06T17:25:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=VerifyVIPProfiles status=FAILURE method=FAD_Page_Testing.VerifyVIPProfiles(java.lang.String)[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[chrome not reachable
   (Session info: chrome=86.0.4240.75)
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'GOL012019', ip: '10.254.181.197', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+System info: host: 'GOL012019', ip: '10.200.60.205', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54202}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 5f125bd7d1c74615512a1a5386ef8200
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56689}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ee71449514010434767dc8808e74abd8]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=86.0.4240.75)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'GOL012019', ip: '10.200.60.205', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56689}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ee71449514010434767dc8808e74abd8
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:294)
+	at com.automationbase.TestBase.getScreenshot(TestBase.java:120)
+	at com.automationbase.TestBase.tearDown(TestBase.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy11.click(Unknown Source)
-	at com.utils.CommonUtils$2.apply(CommonUtils.java:216)
-	at com.utils.CommonUtils$2.apply(CommonUtils.java:1)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 31 more
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:707)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- generalVerificationHomePage -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.testclasses.HomePageTesting@36d4b5c]" name="tearDown" is-config="true" duration-ms="613" started-at="2021-02-09T17:24:12Z" finished-at="2021-02-09T17:24:12Z">
+        </test-method> <!-- tearDown -->
+        <test-method status="SKIP" signature="VerifyVIPProfiles(java.lang.String)[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d]" name="VerifyVIPProfiles" duration-ms="6" started-at="2021-04-06T17:25:41Z" data-provider="data-provider" finished-at="2021-04-06T17:25:41Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=generalVerificationHomePage status=FAILURE method=HomePageTesting.generalVerificationHomePage()[pri:2, instance:com.testclasses.HomePageTesting@36d4b5c] output={null}]]]>
+                <![CDATA[http://mshs-prod-cds-1.ot.mountsinai.org/]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- VerifyVIPProfiles -->
+        <test-method status="SKIP" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d]" name="tearDown" is-config="true" duration-ms="0" started-at="2021-04-06T17:25:41Z" finished-at="2021-04-06T17:25:41Z">
+          <reporter-output>
+          </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="FinishTesting()[pri:0, instance:com.testclasses.HomePageTesting@36d4b5c]" name="FinishTesting" is-config="true" duration-ms="3113" started-at="2021-02-09T17:24:12Z" finished-at="2021-02-09T17:24:15Z">
+        <test-method status="SKIP" signature="VerifyVIPProfiles(java.lang.String)[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d]" name="VerifyVIPProfiles" duration-ms="7" started-at="2021-04-06T17:25:41Z" data-provider="data-provider" finished-at="2021-04-06T17:25:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://mshs-prod-cds-2.ot.mountsinai.org/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyVIPProfiles -->
+        <test-method status="SKIP" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d]" name="tearDown" is-config="true" duration-ms="0" started-at="2021-04-06T17:25:41Z" finished-at="2021-04-06T17:25:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="SKIP" signature="FinishTesting()[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d]" name="FinishTesting" is-config="true" duration-ms="0" started-at="2021-04-06T17:25:41Z" finished-at="2021-04-06T17:25:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FinishTesting -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:com.testclasses.HomePageTesting@36d4b5c]" name="endReport" is-config="true" duration-ms="366" started-at="2021-02-09T17:24:15Z" finished-at="2021-02-09T17:24:16Z">
+        <test-method status="SKIP" signature="endReport()[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d]" name="endReport" is-config="true" duration-ms="0" started-at="2021-04-06T17:25:41Z" finished-at="2021-04-06T17:25:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
-        <test-method status="PASS" signature="closeExtent()[pri:0, instance:com.testclasses.HomePageTesting@36d4b5c]" name="closeExtent" is-config="true" duration-ms="57" started-at="2021-02-09T17:24:16Z" finished-at="2021-02-09T17:24:16Z">
+        <test-method status="SKIP" signature="closeExtent()[pri:0, instance:com.testclasses.FAD_Page_Testing@6d00a15d]" name="closeExtent" is-config="true" duration-ms="0" started-at="2021-04-06T17:25:41Z" finished-at="2021-04-06T17:25:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeExtent -->
-      </class> <!-- com.testclasses.HomePageTesting -->
-    </test> <!-- Test -->
+      </class> <!-- com.testclasses.FAD_Page_Testing -->
+    </test> <!-- Header test -->
   </suite> <!-- Suite -->
 </testng-results>

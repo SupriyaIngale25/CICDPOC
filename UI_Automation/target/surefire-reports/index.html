@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>D:\Supriya\UI_Automation\testng\testng.xml</span>
+                    <span>D:\NewWork\UI_Automation\UI_Automation\testng\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,  2 skipped,  </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,24 +102,29 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testclasses.HomePageTesting" hash-for-method="generalVerificationHomePage">generalVerificationHomePage</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testclasses.FAD_Page_Testing" hash-for-method="VerifyVIPProfiles(https://www.mountsinai.org/)">VerifyVIPProfiles(https://www.mountsinai.org/)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content skipped suite-Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testclasses.HomePageTesting" hash-for-method="HomePageLoadTest">HomePageLoadTest</a> <!-- method navigator-link -->
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testclasses.FAD_Page_Testing" hash-for-method="VerifyVIPProfiles(http://mshs-prod-cds-1.ot.mountsinai.org/)">VerifyVIPProfiles(http://mshs-prod-cds-1.ot.mountsinai.org/)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testclasses.FAD_Page_Testing" hash-for-method="VerifyVIPProfiles(http://mshs-prod-cds-2.ot.mountsinai.org/)">VerifyVIPProfiles(http://mshs-prod-cds-2.ot.mountsinai.org/)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -134,77 +139,77 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.testclasses.HomePageTesting</span>
+              <span class="class-name">com.testclasses.FAD_Page_Testing</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="generalVerificationHomePage">
-                  </a> <!-- generalVerificationHomePage -->
-                  <span class="method-name">generalVerificationHomePage</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.utils.CommonUtils$2@2b52c0d6 (tried for 20 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.utils.CommonUtils.click(CommonUtils.java:214)
-	at com.pageobjects.HomePage.verifylogoRedirectionlink(HomePage.java:42)
-	at com.testclasses.HomePageTesting.generalVerificationHomePage(HomePageTesting.java:33)
-Caused by: org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;img src=&quot;/mshealth/themes/default/media/images/logo-color.png&quot; alt=&quot;Mount Sinai&quot; width=&quot;130&quot; height=&quot;44&quot;&gt; is not clickable at point (168, 274). Other element would receive the click: &lt;form action=&quot;/find-a-doctor/result&quot; method=&quot;get&quot; style=&quot;width: 100%;&quot;&gt;...&lt;/form&gt;
+                  <a name="VerifyVIPProfiles(https://www.mountsinai.org/)">
+                  </a> <!-- VerifyVIPProfiles(https://www.mountsinai.org/) -->
+                  <span class="method-name">VerifyVIPProfiles</span>
+                  <span class="parameters">(https://www.mountsinai.org/)</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: chrome not reachable
   (Session info: chrome=86.0.4240.75)
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;GOL012019&apos;, ip: &apos;10.254.181.197&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
+System info: host: &apos;GOL012019&apos;, ip: &apos;10.200.60.205&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54202}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 5f125bd7d1c74615512a1a5386ef8200
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56689}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ee71449514010434767dc8808e74abd8
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy11.click(Unknown Source)
-	at com.utils.CommonUtils$2.apply(CommonUtils.java:216)
-	at com.utils.CommonUtils$2.apply(CommonUtils.java:1)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 31 more
-... Removed 36 stack frames
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:276)
+	at com.utils.CommonUtils.navigateToURL(CommonUtils.java:176)
+	at com.pageobjects.HomePage.navigateToUrl(HomePage.java:26)
+	at com.testclasses.FAD_Page_Testing.VerifyVIPProfiles(FAD_Page_Testing.java:18)
+... Removed 32 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-failed -->
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.testclasses.HomePageTesting</span>
+              <img src="skipped.png"/>
+              <span class="class-name">com.testclasses.FAD_Page_Testing</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="HomePageLoadTest">
-                  </a> <!-- HomePageLoadTest -->
-                  <span class="method-name">HomePageLoadTest</span>
+                  <a name="VerifyVIPProfiles(http://mshs-prod-cds-1.ot.mountsinai.org/)">
+                  </a> <!-- VerifyVIPProfiles(http://mshs-prod-cds-1.ot.mountsinai.org/) -->
+                  <span class="method-name">VerifyVIPProfiles</span>
+                  <span class="parameters">(http://mshs-prod-cds-1.ot.mountsinai.org/)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyVIPProfiles(http://mshs-prod-cds-2.ot.mountsinai.org/)">
+                  </a> <!-- VerifyVIPProfiles(http://mshs-prod-cds-2.ot.mountsinai.org/) -->
+                  <span class="method-name">VerifyVIPProfiles</span>
+                  <span class="parameters">(http://mshs-prod-cds-2.ot.mountsinai.org/)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-skipped -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\Supriya\UI_Automation\testng\testng.xml</span>
+            <span class="header-content">D:\NewWork\UI_Automation\UI_Automation\testng\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Suite&quot;&gt;
-  &lt;test name=&quot;Test&quot;&gt;
+  &lt;test name=&quot;Header test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.testclasses.HomePageTesting&quot;/&gt;
+      &lt;class name=&quot;com.testclasses.FAD_Page_Testing&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- Header test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -216,7 +221,7 @@ Session ID: 5f125bd7d1c74615512a1a5386ef8200
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Header test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -242,20 +247,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'HomePageLoadTest')
-data.setCell(0, 2, 'com.testclasses.HomePageTesting')
-data.setCell(0, 3, 39137);
+data.setCell(0, 1, 'VerifyVIPProfiles')
+data.setCell(0, 2, 'com.testclasses.FAD_Page_Testing')
+data.setCell(0, 3, 12087);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'generalVerificationHomePage')
-data.setCell(1, 2, 'com.testclasses.HomePageTesting')
-data.setCell(1, 3, 21771);
+data.setCell(1, 1, 'VerifyVIPProfiles')
+data.setCell(1, 2, 'com.testclasses.FAD_Page_Testing')
+data.setCell(1, 3, 7);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'VerifyVIPProfiles')
+data.setCell(2, 2, 'com.testclasses.FAD_Page_Testing')
+data.setCell(2, 3, 6);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -281,45 +290,35 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.testclasses.HomePageTesting</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.testclasses.FAD_Page_Testing</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setReport</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">init</span>
-                <span class="method-start">143 ms</span>
+                <span class="method-start">145 ms</span>
               </div> <!-- configuration-test before -->
-              <div class="test-method">
-                <span class="method-name">HomePageLoadTest</span>
-                <span class="method-start">8680 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=HomePageLoadTest status=SUCCESS method=HomePageTesting.HomePageLoadTest()[pri:1, in...)</span>
-                <span class="method-start">47818 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">generalVerificationHomePage</span>
-                <span class="method-start">47821 ms</span>
+                <span class="method-name">VerifyVIPProfiles(https://www.mountsinai.org/)</span>
+                <span class="method-start">26722 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=generalVerificationHomePage status=FAILURE method=HomePageTesting.generalVerificati...)</span>
-                <span class="method-start">69605 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">tearDown([TestResult name=VerifyVIPProfiles status=FAILURE method=FAD_Page_Testing.VerifyVIPProfiles(java.lan...)</span>
+                <span class="method-start">38824 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-class after">
-                <span class="method-name">FinishTesting</span>
-                <span class="method-start">70218 ms</span>
-              </div> <!-- configuration-class after -->
-              <div class="configuration-test after">
-                <span class="method-name">endReport</span>
-                <span class="method-start">73332 ms</span>
-              </div> <!-- configuration-test after -->
-              <div class="configuration-suite after">
-                <span class="method-name">closeExtent</span>
-                <span class="method-start">73738 ms</span>
-              </div> <!-- configuration-suite after -->
+              <div class="test-method">
+                <span class="method-name">VerifyVIPProfiles(http://mshs-prod-cds-1.ot.mountsinai.org/)</span>
+                <span class="method-start">50855 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">VerifyVIPProfiles(http://mshs-prod-cds-2.ot.mountsinai.org/)</span>
+                <span class="method-start">50874 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

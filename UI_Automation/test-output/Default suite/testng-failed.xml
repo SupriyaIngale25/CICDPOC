@@ -3,7 +3,22 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.testclasses.HomePageTesting"/>
+      <class name="com.testclasses.FAD_Page_Testing"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.testclasses.FAD_Page_Testing">
+        <methods>
+          <include name="setReport"/>
+          <include name="tearDown"/>
+          <include name="endReport"/>
+          <include name="VerifyVIPProfiles" invocation-numbers="0"/>
+          <include name="closeExtent"/>
+          <include name="init"/>
+          <include name="FinishTesting"/>
+        </methods>
+      </class> <!-- com.testclasses.FAD_Page_Testing -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

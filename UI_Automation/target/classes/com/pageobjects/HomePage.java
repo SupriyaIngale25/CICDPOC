@@ -20,10 +20,10 @@ static String pageTitle="Mount Sinai Health System - New York City | Mount Sinai
         PageFactory.initElements(driver, this);
     }
 
-    public static void navigateToUrl(String sheetName) throws InterruptedException {
+    public static void navigateToUrl(String url) throws InterruptedException {
 
         PageFactory.initElements(driver, HomePage.class);
-        navigateToURL(datatable.getCellData(sheetName, 3, 2));
+        navigateToURL(url);
         logInfo("HomePage Loaded");
 
     }

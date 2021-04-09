@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
-  <test name="Test">
+  <test name="Header test">
     <classes>
-      <class name="com.testclasses.HomePageTesting"/>
+      <class name="com.testclasses.FAD_Page_Testing"/>
     </classes>
-  </test> <!-- Test -->
-  <test name="Test(failed)">
+  </test> <!-- Header test -->
+  <test name="Header test(failed)">
     <classes>
-      <class name="com.testclasses.HomePageTesting">
+      <class name="com.testclasses.FAD_Page_Testing">
         <methods>
           <include name="setReport"/>
           <include name="tearDown"/>
-          <include name="endReport"/>
-          <include name="generalVerificationHomePage"/>
-          <include name="closeExtent"/>
+          <include name="VerifyVIPProfiles" invocation-numbers="0"/>
           <include name="init"/>
-          <include name="FinishTesting"/>
         </methods>
-      </class> <!-- com.testclasses.HomePageTesting -->
+      </class> <!-- com.testclasses.FAD_Page_Testing -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Header test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

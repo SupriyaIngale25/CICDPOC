@@ -2,7 +2,6 @@ package com.utils;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +13,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 //import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import com.automationbase.TestBase;
 
@@ -66,22 +67,25 @@ public class CommonUtils extends TestBase {
             // }
 
             // // Code to run in headless browser mode
-            //
-            // options.addArguments("window-size=1920x1080");// to open browser window in
-            // maximise screen
-            // options.addArguments("--headless"); // running chrome in headless mode
-            // options.addArguments("--disable-dev-shm-usage"); // overcome limited resource
-            // problems
-            // options.addArguments("--no-sandbox"); // Bypass OS security model
-            // options.addArguments("disable-infobars");
-            // driver = new ChromeDriver(options);
+//        	ChromeOptions options= new ChromeOptions();
+//             options.addArguments("window-size=1920x1080");// to open browser window in
+//            //// maximise screen
+//             options.addArguments("--headless"); // running chrome in headless mode
+//             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource
+//             //problems
+//             options.addArguments("--no-sandbox"); // Bypass OS security model
+//             options.addArguments("disable-infobars");
+//             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
+//             driver = new ChromeDriver(options);
 
             // Code to run in normal browser UI mode
-
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
+        	ChromeOptions chromeOptions= new ChromeOptions();//--
+        	///chromeOptions.setBinary("C:/Users/supriya_ingale/AppData/Local/Google/Chrome/Application/chrome.exe");//--
+           System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
             System.setProperty("http.maxRedirects", "999");
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(chromeOptions);//--
             driver.manage().window().maximize();
+
 
         }
 
@@ -143,20 +147,22 @@ public class CommonUtils extends TestBase {
 
         HttpURLConnection huc = null;
         int respCode = 200;
-        huc = (HttpURLConnection) (new URL(url).openConnection());
-        huc.setRequestMethod("HEAD");
-
+        
+        
         try {
+        	huc = (HttpURLConnection) (new URL(url).openConnection());
+            huc.setRequestMethod("HEAD");
             huc.connect();
             respCode = huc.getResponseCode();
-        } catch (MalformedURLException e) {
+            
+        } catch (Exception e) {
             return false;
         }
-        if (respCode >= 400) {
-            logFail("Its a broken link :  " + url);
+        if (respCode == 404) {
+            logFail("Its a broken url :  " + url);
             return false;
         } else {
-            logPass("Its a Valid link");
+            logPass("Its a Valid url");
             return true;
         }
 
@@ -450,24 +456,21 @@ public class CommonUtils extends TestBase {
 
     }
 
-    // public static void switchTabs() throws InterruptedException {
-    //
-    // // Get the current window handle
-    // // String mainwindowHandle = driver.getWindowHandle();
-    //
-    // // Get the list of window handles
-    // ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-    //
-    // // Use the list of window handles to switch between windows
-    //
-    // if (tabs.size() > 1) {
-    // driver.switchTo().window(tabs.get(1));
-    // logPass("New Page title for is : " + getTitle());
-    // } else
-    // logFail("Could not switch to new tab");
-    //
-    // }
+     public static void switchTabs() throws InterruptedException {
+    
+			// hold all window handles in array list
+			ArrayList<String> newTb = new ArrayList<String>(driver.getWindowHandles());
+			//switch to new tab
+			driver.switchTo().window(newTb.get(1));
+			System.out.println("Page title of new tab: " + getTitle());
+    
+     }
+     public static void CloseTabsSwitchBack() throws InterruptedException {
+    	    
+		
 
+    
+     }
     public static void SwitchBacktoMainWindow() throws InterruptedException {
 
         // Get the current window handle
@@ -595,9 +598,15 @@ public class CommonUtils extends TestBase {
      */
     public static void waitForVisible(WebElement we) {
 
-        int time = Integer.parseInt(EXPLICIT);
-        expWait = new WebDriverWait(driver, time);
-        expWait.until(ExpectedConditions.visibilityOf(we));
+    	 int time = Integer.parseInt(EXPLICIT);
+         expWait = new WebDriverWait(driver, time);
+
+         try {
+             expWait.ignoring(WebDriverException.class, StaleElementReferenceException.class)
+                     .until(ExpectedConditions.visibilityOf(we));
+         } catch (NullPointerException e) {
+             logFail("NullPointerException" + e.getMessage());
+         }
     }
 
     /*
