@@ -5,7 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;		
 
 @RunWith(Cucumber.class)				
-@CucumberOptions(features="Features",glue={"StepsDefinition"})						
+@CucumberOptions(features="Features",glue={"StepsDefinition"},format = {"pretty", "html:target/Destination"} )						
 public class Runner 				
 {		
 

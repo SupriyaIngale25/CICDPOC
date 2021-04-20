@@ -43,5 +43,6 @@ static String pageTitle="Mount Sinai Health System - New York City | Mount Sinai
         Assert.assertEquals(actulPageTitle,pageTitle);
         System.out.println("Page Title is : " + actulPageTitle );
         System.out.println("Verified the logo redirection to home page");
+        driver.close();
     }		
 }		
