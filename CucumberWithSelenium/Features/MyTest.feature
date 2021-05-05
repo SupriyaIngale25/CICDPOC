@@ -1,4 +1,4 @@
-Feature: Reset functionality on login page of Application 
+Feature: Logo redirection functionality of an Application 
 
 
 Scenario: Verification Page Title for MSHS 
