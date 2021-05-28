@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Apr 08 15:27:58 IST 2021</td>
+<td>Started on:</td><td>Fri May 28 12:37:10 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>2436 seconds (2436320 ms)</td>
+<tr><td>Total time:</td><td>116 seconds (116843 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,13 +75,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.testclasses.FAD_Page_Testing.VerifyVIPProfiles()'><b>VerifyVIPProfiles</b><br>Test class: com.testclasses.FAD_Page_Testing<br>Parameters: https://www.mountsinai.org/</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (0f2aaee30e41a815bb99888da6b1cf18)] -&gt; xpath: //*[@id=&apos;resultSummary&apos;]/strong] (tried for 20 second(s) with 500 milliseconds interval)
+<td title='com.testclasses.EOS_ProfilePage_Testing.VerifyEOSProfiles()'><b>VerifyEOSProfiles</b><br>Test class: com.testclasses.EOS_ProfilePage_Testing<br>Parameters: https://www.mountsinai.org/</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.utils.CommonUtils$2@d4602a (tried for 20 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.utils.CommonUtils.waitForVisible(CommonUtils.java:606)
-	at com.pageobjects.FindADoctorPage.verifyVIPProfiles(FindADoctorPage.java:98)
-	at com.testclasses.FAD_Page_Testing.VerifyVIPProfiles(FAD_Page_Testing.java:23)
+	at com.utils.CommonUtils.click(CommonUtils.java:267)
+	at com.pageobjects.EOSProfilePage.CheckAndSelectTimeslot_Inperson(EOSProfilePage.java:218)
+	at com.pageobjects.EOSProfilePage.verifyEOSProfiles(EOSProfilePage.java:406)
+	at com.testclasses.EOS_ProfilePage_Testing.VerifyEOSProfiles(EOS_ProfilePage_Testing.java:20)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -106,14 +107,13 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
-Caused by: org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=89.0.4389.114)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=86.0.4240.75)
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;GOD10963&apos;, ip: &apos;10.254.176.177&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_281&apos;
+System info: host: &apos;GOL012019&apos;, ip: &apos;10.44.142.49&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55973}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0f2aaee30e41a815bb99888da6b1cf18
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62401}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 224667159ac41835c8da1ee6f73f530b
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -125,26 +125,25 @@ Session ID: 0f2aaee30e41a815bb99888da6b1cf18
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:317)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy13.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
+	at com.sun.proxy.$Proxy13.click(Unknown Source)
+	at com.utils.CommonUtils$2.apply(CommonUtils.java:269)
+	at com.utils.CommonUtils$2.apply(CommonUtils.java:1)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 27 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace2123914473", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2123914473'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (0f2aaee30e41a815bb99888da6b1cf18)] -&gt; xpath: //*[@id=&apos;resultSummary&apos;]/strong] (tried for 20 second(s) with 500 milliseconds interval)
+	... 28 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace1688770224", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1688770224'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.utils.CommonUtils$2@d4602a (tried for 20 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.utils.CommonUtils.waitForVisible(CommonUtils.java:606)
-	at com.pageobjects.FindADoctorPage.verifyVIPProfiles(FindADoctorPage.java:98)
-	at com.testclasses.FAD_Page_Testing.VerifyVIPProfiles(FAD_Page_Testing.java:23)
+	at com.utils.CommonUtils.click(CommonUtils.java:267)
+	at com.pageobjects.EOSProfilePage.CheckAndSelectTimeslot_Inperson(EOSProfilePage.java:218)
+	at com.pageobjects.EOSProfilePage.verifyEOSProfiles(EOSProfilePage.java:406)
+	at com.testclasses.EOS_ProfilePage_Testing.VerifyEOSProfiles(EOS_ProfilePage_Testing.java:20)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -169,14 +168,13 @@ Session ID: 0f2aaee30e41a815bb99888da6b1cf18
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
-Caused by: org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=89.0.4389.114)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=86.0.4240.75)
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;GOD10963&apos;, ip: &apos;10.254.176.177&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_281&apos;
+System info: host: &apos;GOL012019&apos;, ip: &apos;10.44.142.49&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55973}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0f2aaee30e41a815bb99888da6b1cf18
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62401}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 224667159ac41835c8da1ee6f73f530b
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -188,40 +186,20 @@ Session ID: 0f2aaee30e41a815bb99888da6b1cf18
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:317)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy13.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
+	at com.sun.proxy.$Proxy13.click(Unknown Source)
+	at com.utils.CommonUtils$2.apply(CommonUtils.java:269)
+	at com.utils.CommonUtils$2.apply(CommonUtils.java:1)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 27 more
+	... 28 more
 </pre></div></td>
-<td>85</td>
-<td>com.testclasses.FAD_Page_Testing@42d3bd8b</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.testclasses.FAD_Page_Testing.VerifyVIPProfiles()'><b>VerifyVIPProfiles</b><br>Test class: com.testclasses.FAD_Page_Testing<br>Parameters: http://mshs-prod-cds-1.ot.mountsinai.org/</td>
-<td></td>
-<td>1212</td>
-<td>com.testclasses.FAD_Page_Testing@42d3bd8b</td></tr>
-<tr>
-<td title='com.testclasses.FAD_Page_Testing.VerifyVIPProfiles()'><b>VerifyVIPProfiles</b><br>Test class: com.testclasses.FAD_Page_Testing<br>Parameters: http://mshs-prod-cds-2.ot.mountsinai.org/</td>
-<td></td>
-<td>1124</td>
-<td>com.testclasses.FAD_Page_Testing@42d3bd8b</td></tr>
+<td>103</td>
+<td>com.testclasses.EOS_ProfilePage_Testing@42d3bd8b</td></tr>
 </table><p>
 </body>
 </html>

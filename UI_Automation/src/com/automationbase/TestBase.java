@@ -20,13 +20,18 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
-//import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.configuration.ChartLocation;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.utils.CommonUtils;
 import com.utils.XlsReader;
 
@@ -47,18 +52,26 @@ public class TestBase {
     public static ExtentReports extent;
     public static ExtentTest logger;
     public static ExtentTest extentTest;
-
+ 
     private static Logger log = Logger.getLogger(TestBase.class);
+   
 
     @BeforeSuite
     public void setReport() {
-        extent = new ExtentReports(PROJECTDIR + "/test-output/TestReportFinal.html", true);
+    	String dateName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+    	
+    	extent = ExtentManager.createInstance(PROJECTDIR + "/test-output/TestReportFinal_"+dateName+".html");
+    	ExtentHtmlReporter htmlReporter  = new ExtentHtmlReporter(PROJECTDIR + "/test-output/TestReportFinal_"+dateName+".html");
+    	extent.attachReporter(htmlReporter);
+    	
+    	//extent.setReportUsesManualConfiguration(true);
+    	
+    	
+    	extent.setSystemInfo("Host Name", "TEST MACHINE" +" "+ System.getProperty("os.name"));
+   	 extent.setSystemInfo("Environment", System.getProperty("os.name"));
+   	 extent.setSystemInfo("User Name", "TEST USER");
 
-        extent.addSystemInfo("Host Name", "TEST MACHINE" +" "+ System.getProperty("os.name"))
-                .addSystemInfo("Environment", System.getProperty("os.name") + "_CHROME")
-                .addSystemInfo("User Name", "TEST USER");
-
-        System.out.println(PROJECTDIR);
+     //   System.out.println(PROJECTDIR);
 
     }
 
@@ -81,19 +94,22 @@ public class TestBase {
 
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
-        if (ITestResult.FAILURE == result.getStatus()) {
+        if (result.getStatus()==ITestResult.FAILURE) {
             String screenshotpath = getScreenshot(driver, result.getName());
-
-            extentTest.log(LogStatus.FAIL, "Screenshot ",
-                    result.getThrowable() + extentTest.addScreenCapture(screenshotpath)); // add screenshot to extent
-                                                                                          // report
+            
+            extentTest.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test case FAILED due to below issues:", ExtentColor.RED));     
+    		extentTest.fail(result.getThrowable() );
+            extentTest.fail("Snapshot for failed step : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotpath).build());
+            
         } else if (result.getStatus() == ITestResult.SKIP) {
-            extentTest.log(LogStatus.SKIP, "Test case skipped is ", result.getName());
+            extentTest.log(Status.SKIP, "Test case skipped is "+result.getName());
+            extentTest.skip(result.getThrowable() );
         } else if (result.getStatus() == ITestResult.SUCCESS) {
-            extentTest.log(LogStatus.PASS, "Test case - ", result.getName());
+            extentTest.log(Status.PASS, MarkupHelper.createLabel( "Test case - "+ result.getName(), ExtentColor.GREEN));
+            
         }
 
-        extent.endTest(extentTest);
+      extent.flush();
     }
 
     @AfterTest
@@ -110,7 +126,7 @@ public class TestBase {
 
     @AfterSuite
     public void closeExtent() {
-        extent.close();
+        extent.flush();
 
     }
 
@@ -118,7 +134,7 @@ public class TestBase {
         String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
-        String destination = System.getProperty("user.dir") + "/failedTestsScreenshots/" + screenshotName + "_"
+        String destination = System.getProperty("user.dir") + "/TestsScreenshots/" + screenshotName + "_"
                 + dateName + ".png";
 
         File finalDestination = new File(destination);
@@ -132,15 +148,17 @@ public class TestBase {
     }
 
     public static void logFail(String details) {
-        extentTest.log(LogStatus.FAIL, details);
+        extentTest.log(Status.FAIL,  MarkupHelper.createLabel(details, ExtentColor.RED));
     }
 
     public static void logPass(String details) {
-        extentTest.log(LogStatus.PASS, details);
+        extentTest.log(Status.PASS, MarkupHelper.createLabel(details, ExtentColor.GREEN));
+
     }
 
     public static void logInfo(String details) {
-        extentTest.log(LogStatus.INFO, details);
+        extentTest.log(Status.INFO, details);
     }
 
 }
+

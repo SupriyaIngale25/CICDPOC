@@ -23,6 +23,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import com.automationbase.TestBase;
+//import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -80,7 +85,7 @@ public class CommonUtils extends TestBase {
 
             // Code to run in normal browser UI mode
         	ChromeOptions chromeOptions= new ChromeOptions();//--
-        	///chromeOptions.setBinary("C:/Users/supriya_ingale/AppData/Local/Google/Chrome/Application/chrome.exe");//--
+        	chromeOptions.setBinary("C:/Users/supriya_ingale/AppData/Local/Google/Chrome/Application/chrome.exe");//--
            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
             System.setProperty("http.maxRedirects", "999");
             driver = new ChromeDriver(chromeOptions);//--
@@ -93,6 +98,48 @@ public class CommonUtils extends TestBase {
 
     }
 
+    
+    public static void switchIframeByID(String id){
+        
+    	driver.switchTo().frame(id);
+    }
+    
+    public static void focusOnElement(WebElement element) throws InterruptedException{
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+    	js.executeScript("element.focus();");
+    }
+    
+    
+    public static void hoverOverAndClick(WebElement elem) throws InterruptedException {
+
+        Actions act = new Actions(driver);
+        act.moveToElement(elem).build().perform();
+        click(elem);
+
+    }
+    
+ public static void takeSnapShot() throws Exception{
+	
+    	String screenshotpath = getScreenshot(driver,  "Screenshot");
+
+        extentTest.log(Status.INFO, "Screenshot "+
+                 extentTest.addScreenCaptureFromPath(screenshotpath)); // add screenshot to extent
+
+    }
+ 
+	public static void takeFailSnapShot() throws Exception{
+
+ 	String screenshotpath = getScreenshot(driver, "Screenshot");
+
+ 	extentTest.fail("Screenshot for failed test step ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotpath).build());
+ }
+	public static void takePassSnapShot() throws Exception{
+
+ 	String screenshotpath = getScreenshot(driver, "Screenshot");
+
+ 	extentTest.log(Status.PASS, "Screenshot for Passed test step : "+ extentTest.addScreenCaptureFromPath(screenshotpath)); 
+ }
+    
     public static boolean isWindows() {
 
         return (OS.indexOf("win") >= 0);

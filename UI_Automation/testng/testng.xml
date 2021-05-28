@@ -8,11 +8,18 @@
 		</classes>
 	</test> -->
 
-	<test name="Header test">
+	<test name="FAD test for VIP profiles">
 		<classes>
 			<class
 				name="com.testclasses.FAD_Page_Testing" />
 		</classes>
 	</test> 
-  
+	
+<!--	<test name="EOS Widget testing for dosctors">
+		<classes>
+			<class
+				name="com.testclasses.EOS_ProfilePage_Testing" />
+		</classes>
+	</test> 
+  -->
 </suite> <!-- Suite -->

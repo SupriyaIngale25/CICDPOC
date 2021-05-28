@@ -13,7 +13,7 @@ public class HomePageTesting extends TestBase {
     @Test(priority = 1)
     public static void HomePageLoadTest() throws InterruptedException {
 
-        extentTest = extent.startTest("Verify HomePageLoad");
+        extentTest = extent.createTest("Verify HomePageLoad");
 
         logInfo("===== TestCase  TestHomePageLoad Started =====");
         HomePage.navigateToUrl("LoginTest");
@@ -25,7 +25,7 @@ public class HomePageTesting extends TestBase {
     @Test(priority = 2)
     public static void generalVerificationHomePage() throws InterruptedException {
 
-        extentTest = extent.startTest("Verify Header,Footer, searchbox and logo is Present On Home Page");
+        extentTest = extent.createTest("Verify Header,Footer, searchbox and logo is Present On Home Page");
         logInfo("===== TestCase  General Verification Home Page Started =====");
         PageFooter.verifyPageFooter();
         PageHeader.verifyPageHeader();

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="3" passed="2">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2436320" started-at="2021-04-08T09:57:58Z" finished-at="2021-04-08T10:38:34Z">
+  <suite name="Default suite" duration-ms="116843" started-at="2021-05-28T07:07:10Z" finished-at="2021-05-28T07:09:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2436320" started-at="2021-04-08T09:57:58Z" finished-at="2021-04-08T10:38:34Z">
-      <class name="com.testclasses.FAD_Page_Testing">
-        <test-method status="PASS" signature="setReport()[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b]" name="setReport" is-config="true" duration-ms="398" started-at="2021-04-08T15:27:58Z" finished-at="2021-04-08T15:27:58Z">
+    <test name="Default test" duration-ms="116843" started-at="2021-05-28T07:07:10Z" finished-at="2021-05-28T07:09:07Z">
+      <class name="com.testclasses.EOS_ProfilePage_Testing">
+        <test-method status="PASS" signature="setReport()[pri:0, instance:com.testclasses.EOS_ProfilePage_Testing@42d3bd8b]" name="setReport" is-config="true" duration-ms="301" started-at="2021-05-28T12:37:10Z" finished-at="2021-05-28T12:37:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setReport -->
-        <test-method status="PASS" signature="init()[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b]" name="init" is-config="true" duration-ms="7616" started-at="2021-04-08T15:27:58Z" finished-at="2021-04-08T15:28:06Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.testclasses.EOS_ProfilePage_Testing@42d3bd8b]" name="init" is-config="true" duration-ms="10878" started-at="2021-05-28T12:37:10Z" finished-at="2021-05-28T12:37:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="FAIL" signature="VerifyVIPProfiles(java.lang.String)[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b]" name="VerifyVIPProfiles" duration-ms="85079" started-at="2021-04-08T15:28:06Z" data-provider="data-provider" finished-at="2021-04-08T15:29:31Z">
+        <test-method status="FAIL" signature="VerifyEOSProfiles(java.lang.String)[pri:0, instance:com.testclasses.EOS_ProfilePage_Testing@42d3bd8b]" name="VerifyEOSProfiles" duration-ms="103428" started-at="2021-05-28T12:37:21Z" data-provider="data-provider" finished-at="2021-05-28T12:39:04Z">
           <params>
             <param index="0">
               <value>
@@ -25,15 +25,16 @@
           </params>
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (0f2aaee30e41a815bb99888da6b1cf18)] -> xpath: //*[@id='resultSummary']/strong] (tried for 20 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[Expected condition failed: waiting for com.utils.CommonUtils$2@d4602a (tried for 20 second(s) with 500 milliseconds interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (0f2aaee30e41a815bb99888da6b1cf18)] -> xpath: //*[@id='resultSummary']/strong] (tried for 20 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.utils.CommonUtils$2@d4602a (tried for 20 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.utils.CommonUtils.waitForVisible(CommonUtils.java:606)
-	at com.pageobjects.FindADoctorPage.verifyVIPProfiles(FindADoctorPage.java:98)
-	at com.testclasses.FAD_Page_Testing.VerifyVIPProfiles(FAD_Page_Testing.java:23)
+	at com.utils.CommonUtils.click(CommonUtils.java:267)
+	at com.pageobjects.EOSProfilePage.CheckAndSelectTimeslot_Inperson(EOSProfilePage.java:218)
+	at com.pageobjects.EOSProfilePage.verifyEOSProfiles(EOSProfilePage.java:406)
+	at com.testclasses.EOS_ProfilePage_Testing.VerifyEOSProfiles(EOS_ProfilePage_Testing.java:20)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -58,14 +59,13 @@
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
-Caused by: org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=89.0.4389.114)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=86.0.4240.75)
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'GOD10963', ip: '10.254.176.177', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
+System info: host: 'GOL012019', ip: '10.44.142.49', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55973}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0f2aaee30e41a815bb99888da6b1cf18
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\SUPRIY~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62401}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 224667159ac41835c8da1ee6f73f530b
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -77,93 +77,47 @@ Session ID: 0f2aaee30e41a815bb99888da6b1cf18
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:317)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy13.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
+	at com.sun.proxy.$Proxy13.click(Unknown Source)
+	at com.utils.CommonUtils$2.apply(CommonUtils.java:269)
+	at com.utils.CommonUtils$2.apply(CommonUtils.java:1)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 27 more
+	... 28 more
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyVIPProfiles -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b]" name="tearDown" is-config="true" duration-ms="530" started-at="2021-04-08T15:29:31Z" finished-at="2021-04-08T15:29:31Z">
+        </test-method> <!-- VerifyEOSProfiles -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.testclasses.EOS_ProfilePage_Testing@42d3bd8b]" name="tearDown" is-config="true" duration-ms="912" started-at="2021-05-28T12:39:04Z" finished-at="2021-05-28T12:39:05Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyVIPProfiles status=FAILURE method=FAD_Page_Testing.VerifyVIPProfiles(java.lang.String)[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyEOSProfiles status=FAILURE method=EOS_ProfilePage_Testing.VerifyEOSProfiles(java.lang.String)[pri:0, instance:com.testclasses.EOS_ProfilePage_Testing@42d3bd8b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="VerifyVIPProfiles(java.lang.String)[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b]" name="VerifyVIPProfiles" duration-ms="1212336" started-at="2021-04-08T15:29:31Z" data-provider="data-provider" finished-at="2021-04-08T15:49:44Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[http://mshs-prod-cds-1.ot.mountsinai.org/]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyVIPProfiles -->
-        <test-method status="PASS" signature="VerifyVIPProfiles(java.lang.String)[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b]" name="VerifyVIPProfiles" duration-ms="1124031" started-at="2021-04-08T15:49:44Z" data-provider="data-provider" finished-at="2021-04-08T16:08:28Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[http://mshs-prod-cds-2.ot.mountsinai.org/]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyVIPProfiles -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b]" name="tearDown" is-config="true" duration-ms="0" started-at="2021-04-08T15:49:44Z" finished-at="2021-04-08T15:49:44Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyVIPProfiles status=SUCCESS method=FAD_Page_Testing.VerifyVIPProfiles(java.lang.String)[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b]" name="tearDown" is-config="true" duration-ms="0" started-at="2021-04-08T16:08:28Z" finished-at="2021-04-08T16:08:28Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyVIPProfiles status=SUCCESS method=FAD_Page_Testing.VerifyVIPProfiles(java.lang.String)[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="FinishTesting()[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b]" name="FinishTesting" is-config="true" duration-ms="6414" started-at="2021-04-08T16:08:28Z" finished-at="2021-04-08T16:08:34Z">
+        <test-method status="PASS" signature="FinishTesting()[pri:0, instance:com.testclasses.EOS_ProfilePage_Testing@42d3bd8b]" name="FinishTesting" is-config="true" duration-ms="1363" started-at="2021-05-28T12:39:05Z" finished-at="2021-05-28T12:39:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FinishTesting -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b]" name="endReport" is-config="true" duration-ms="298" started-at="2021-04-08T16:08:34Z" finished-at="2021-04-08T16:08:34Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:com.testclasses.EOS_ProfilePage_Testing@42d3bd8b]" name="endReport" is-config="true" duration-ms="137" started-at="2021-05-28T12:39:07Z" finished-at="2021-05-28T12:39:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
-        <test-method status="PASS" signature="closeExtent()[pri:0, instance:com.testclasses.FAD_Page_Testing@42d3bd8b]" name="closeExtent" is-config="true" duration-ms="38" started-at="2021-04-08T16:08:34Z" finished-at="2021-04-08T16:08:34Z">
+        <test-method status="PASS" signature="closeExtent()[pri:0, instance:com.testclasses.EOS_ProfilePage_Testing@42d3bd8b]" name="closeExtent" is-config="true" duration-ms="112" started-at="2021-05-28T12:39:07Z" finished-at="2021-05-28T12:39:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeExtent -->
-      </class> <!-- com.testclasses.FAD_Page_Testing -->
+      </class> <!-- com.testclasses.EOS_ProfilePage_Testing -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
